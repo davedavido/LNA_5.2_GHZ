@@ -69,9 +69,9 @@ R:R4  N__7 Vb R=49 kOhm Noise=yes
 R:R1  N__11 N__7 R=130 Ohm Noise=yes 
 aele Mu1=mu(S);
 Short:IC  N__7 N__2 Mode=0 SaveCurrent=yes 
-C:C1  0 Ve C=Cemit 
+C:C1  0 Ve C=220 pF 
 
-Cemit=220 pF
+Cemit=22 pF
 Port:Term1  N__15 0 Num=1 Z=50 Ohm Noise=yes 
 Port:Term2  N__9 0 Num=2 Z=50 Ohm Noise=yes 
 
@@ -103,5 +103,5 @@ OutputPlan:DC1_Output \
 
 Short:IB1  Vb N__8 Mode=0 SaveCurrent=yes 
 L:L1  N__11 N__4 L=10 nH Noise=yes  
-C:C2  N__15 Vb C=22 pF 
-C:C3  N__2 N__10 C=22 pF 
+C:C2  N__15 Vb C=220 pF 
+C:C3  N__2 N__10 C=220 pF 
