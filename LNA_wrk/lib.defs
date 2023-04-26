@@ -1,0 +1,7 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+DEFINE LNA_lib LNA_lib
+ASSIGN LNA_lib writePath LNA_lib
+ASSIGN LNA_lib libMode shared
+DEFINE BFP840FESD_Test BFP840FESD_Test
+ASSIGN BFP840FESD_Test libMode shared

@@ -1,0 +1,28 @@
+Netlist Translator (*) 511.update1.0 Nov 16 2019
+IFF translation log
+
+Input format: SPICE Version 2G
+Input filename: C:/Users/David/Desktop/BFP840FESD.lib
+
+Output format: IFF file
+Output filename: spice.iff
+
+Special options:
+    Processing first line as comment.
+
+Begin translation at Wed Apr 26 14:33:19 2023
+
+Creating schematic with named connections.
+Reading item definition file "C:\Program Files\Keysight\ADS2020_update1.0/config\spctoiff.cfg"
+
+Translation completed at Wed Apr 26 14:33:19 2023.
+
+========================================================================
+End of Spice Translation Log file, beginning of IFF Translation Log File
+========================================================================
+
+Beginning IFF import
+Processing IFF file: C:\Users\David\LNA_wrk\spice.iff
+Creating design BFP840FESD_Test:bfp840fesd:schematic
+Creating design BFP840FESD_Test:bfp840fesd:symbol
+IFF import complete

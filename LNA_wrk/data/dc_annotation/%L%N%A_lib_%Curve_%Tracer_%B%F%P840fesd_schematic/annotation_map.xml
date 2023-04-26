@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotation_files Version="1.0" Simulator="hpeesofsim" Time="Mi Apr 26 15:09:16 2023">
+ <File name="annotation_1.xml">
+  <Controller name="DC1">
+   <P>IBB: 4.9999999999999996e-06</P>
+   <P>VCE: 0.0000000000000000e+00</P>
+  </Controller>
+ </File>
+</annotation_files>

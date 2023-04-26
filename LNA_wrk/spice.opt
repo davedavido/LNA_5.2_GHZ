@@ -1,0 +1,8 @@
+ConnectionMethod = 1
+SpiceDialect = 1
+ElementReplacementTable
+IgnoreFirstLine = true
+SuppressNameMapping = false
+ComponentName = spice1
+NumberOfPins = 0
+DirectoryToStoreNetList = C:\Users\David\LNA_wrk
