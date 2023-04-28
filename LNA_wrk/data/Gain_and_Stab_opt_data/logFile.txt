@@ -1,0 +1,15 @@
+
+hpeesofsim (*) 511.update1.0 Nov 21 2019, MINT version 5
+    (64-bit windows built: Fri Nov 22, 2019 03:45:24 +0000)
+
+
+1 spare nodes and 1 spare devices are removed.
+The details can be found in file 'C:\Users\Mo\Documents\GitHub\LNA_5.2_GHZ\LNA_wrk\data\.\Gain_and_Stab_opt_data\spare_removal.txt'.
+
+
+SP SP1[1] <LNA_lib:Gain_and_Stab_opt:schematic>   freq=(10 MHz->3 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =     1.35 seconds.
+

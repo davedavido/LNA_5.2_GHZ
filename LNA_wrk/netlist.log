@@ -3,6 +3,24 @@
 
 Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="BFP840FESD_Test:DC_and_SPARAMS BFP840FESD:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: BFP840FESD_Test
+; Cell Name: DC_Bias
+; View Name: schematic
+define DC_Bias ( Output  DC_Feed ) 
+;parameters 
+MLIN2:TL2  DC_Feed N__3 Subst="MSub1" W=width_pad_mm mm L=1.3 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MLIN2:TL1  Output N__2 Subst="MSub1" W=800 um L=8.4 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+model MSub1 MSUB H=1.5 mm Er=4.6  Mur=1.0  Cond=5.4e7  Hu=3.9e+34 mil T=0.035 mm TanD=1.000e-3  Rough=0 cm DielectricLossModel=1 FreqForEpsrTanD=1.0e9  LowFreqForTanD=1.0e3  HighFreqForTanD=1.0e12  RoughnessModel=2 
+MLIN2:TL3  N__4 0 Subst="MSub1" W=width_pad_mm mm L=1.3 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MGAP:Gap1  N__3 N__4 Subst="MSub1" W=width_pad_mm mm S=0.6 mm 
+
+width_pad_mm=2
+MSTEP:Step1  DC_Feed N__2 Subst="MSub1" W1=width_pad_mm mm W2=0.800 mm 
+
+w50=2.8
+C:C1  DC_Feed 0 C=470 pF 
+end DC_Bias
+
+; Library Name: BFP840FESD_Test
 ; Cell Name: bfp840fesd
 ; View Name: schematic
 define bfp840fesd ( _node1  _node2  _node3  _node4 ) 
@@ -46,8 +64,8 @@ model m_d5 Diode Is=3.5e-015 Rs=4.7 N=1.02 Cjo=1.2e-014 Vj=0.7 M=0.4999 AllowSca
 model m_bfp840fesd BJT NPN=1 PNP=0 Is=2.009e-016 Bf=946.1 Nf=1 Vaf=300 Ikf=0.1993 Ise=6.26e-015 Ne=2 Br=108 Nr=1 Var=1.288 Ikr=0.0007328 Isc=8.126e-016 Nc=2 Rb=17 Irb=0 Rbm=1 Re=0.05 Rc=4.145 Cje=1.3e-013 Vje=0.6 Mje=0.5 Cjc=1.1e-014 Vjc=0.67 Mjc=0.88 Xcjc=0.4894 Cjs=3e-013 Vjs=0.7 Mjs=0.5 Fc=0.352 Xtf=17.49 Tf=7.494e-013 Vtf=0.5295 Itf=1.025 Ptf=4.667 Tr=1.793e-009 Kf=6.4e-012 Af=1.44 Lateral=0 RbModel=1 Approxqb=1 Tnom=25 Tlev=0 Tlevc=0 Eg=1.11 Xtb=-2.276 Xti=0 
 end bfp840fesd
 
-V_Source:SRC1  N__4 0 Type="V_DC" Vdc=3.0 V SaveCurrent=0 
-bfp840fesd:X1  N__2 N__8 Ve Ve _M=1 
+V_Source:SRC1  N__3 0 Type="V_DC" Vdc=3.0 V SaveCurrent=0 
+bfp840fesd:X1  N__2 N__6 Ve Ve _M=1 
 R:R6  N__10 N__9 R=15 Ohm Temp=16.85 
 aele MuPrime1=mu_prime(S);
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 GHz DevOpPtLevel=0 \
@@ -65,9 +83,11 @@ OutputPlan:SP1_Output \
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
 R:R5  Ve 0 R=65 Ohm Noise=yes 
-R:R4  N__7 Vb R=49 kOhm Noise=yes 
-R:R1  N__11 N__7 R=130 Ohm Noise=yes 
+R:R4  N__7 N__0 R=49.3 kOhm Noise=yes 
+R:R1  N__11 N__7 R=133 Ohm Noise=yes 
 aele Mu1=mu(S);
+C:C4  N__8 0 C=1.5 pF 
+C:C3  N__2 N__10 C=220 pF 
 Short:IC  N__7 N__2 Mode=0 SaveCurrent=yes 
 C:C1  0 Ve C=220 pF 
 
@@ -101,7 +121,7 @@ OutputPlan:DC1_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-Short:IB1  Vb N__8 Mode=0 SaveCurrent=yes 
-L:L1  N__11 N__4 L=10 nH Noise=yes  
-C:C2  N__15 Vb C=220 pF 
-C:C3  N__2 N__10 C=220 pF 
+Short:IB1  N__0 N__6 Mode=0 SaveCurrent=yes 
+C:C2  N__15 N__0 C=220 pF 
+L:L2  N__15 N__8 L=2.7 nH Noise=yes  
+DC_Bias:X3  N__11 N__3 

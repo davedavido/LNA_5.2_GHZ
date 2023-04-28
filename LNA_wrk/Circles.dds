@@ -10,7 +10,7 @@ ddoId = get_new(ddsId, "Object");
 // DataDisplay Object:
 	set(ddoId, "Path", dds_get_exec_path(what_file(0)));
 	set(ddoId, "Name", dds_get_exec_file(what_file(0)));
-	set(ddoId, "FileModifiedDateAndTime", "2018-08-02T06:07:53Z");
+	set(ddoId, "FileModifiedDateAndTime", "2023-04-27T12:36:53Z");
 	dssId = get(ddoId, "DatasetServer");
 // Default Dataset
 	set(ddoId, "DefaultDataset", "Circles");
@@ -264,8 +264,8 @@ markerID = get_new(traceID, "MarkerNew", "m1", "11", 1, "", "", 1, "");
 		set(markerID, "MkrReadoutFontSize", 166);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 7165);
-		set(markerID, "MkrReadoutRight", 9819);
-		set(markerID, "MkrReadoutBottom", 6003);
+		set(markerID, "MkrReadoutRight", 9795);
+		set(markerID, "MkrReadoutBottom", 5979);
 		set(markerID, "MkrReadoutTop", 5069);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -630,8 +630,8 @@ markerID = get_new(traceID, "MarkerNew", "m2", "2000010000.000000000000000000000
 		set(markerID, "MkrReadoutFontSize", 166);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 7653);
-		set(markerID, "MkrReadoutRight", 10665);
-		set(markerID, "MkrReadoutBottom", 9869);
+		set(markerID, "MkrReadoutRight", 10629);
+		set(markerID, "MkrReadoutBottom", 9833);
 		set(markerID, "MkrReadoutTop", 9267);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -653,7 +653,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "Uid", 11984170);
 // Graphical Object:
 	set(goId0, "Right", 6798);
-	set(goId0, "Bottom", 9164);
+	set(goId0, "Bottom", 9220);
 	set(goId0, "Left", 1448);
 	set(goId0, "Top", 5898);
 	set(goId0, "Zrot", 0.000000);
@@ -671,7 +671,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "LeftMargin", 714);
 	set(goId0, "RightMargin", 100);
 	set(goId0, "TopMargin", 125);
-	set(goId0, "BottomMargin", 532);
+	set(goId0, "BottomMargin", 588);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
@@ -1124,11 +1124,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 1644802752);
 // Graphical Object:
-	set(goId0, "Right", 15014);
+	set(goId0, "Right", 14978);
 	set(goId0, "Bottom", 6401);
 	set(goId0, "Left", 13290);
 	set(goId0, "Top", 6151);
@@ -1148,11 +1149,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 110230528);
 // Graphical Object:
-	set(goId0, "Right", 14967);
+	set(goId0, "Right", 14931);
 	set(goId0, "Bottom", 6712);
 	set(goId0, "Left", 13302);
 	set(goId0, "Top", 6462);
@@ -1172,11 +1174,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 1068502743);
 // Graphical Object:
-	set(goId0, "Right", 21549);
+	set(goId0, "Right", 21513);
 	set(goId0, "Bottom", 7202);
 	set(goId0, "Left", 13271);
 	set(goId0, "Top", 6952);
@@ -1383,11 +1386,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 2113462674);
 // Graphical Object:
-	set(goId0, "Right", 15988);
+	set(goId0, "Right", 15952);
 	set(goId0, "Bottom", 8739);
 	set(goId0, "Left", 14211);
 	set(goId0, "Top", 8489);
@@ -1407,11 +1411,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 160099900);
 // Graphical Object:
-	set(goId0, "Right", 20509);
+	set(goId0, "Right", 20473);
 	set(goId0, "Bottom", 9140);
 	set(goId0, "Left", 14236);
 	set(goId0, "Top", 8890);
@@ -1677,11 +1682,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 112442752);
 // Graphical Object:
-	set(goId0, "Right", 16223);
+	set(goId0, "Right", 16187);
 	set(goId0, "Bottom", 10709);
 	set(goId0, "Left", 14538);
 	set(goId0, "Top", 10459);
@@ -1998,11 +2004,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 1606452898);
 // Graphical Object:
-	set(goId0, "Right", 18197);
+	set(goId0, "Right", 18161);
 	set(goId0, "Bottom", 9522);
 	set(goId0, "Left", 14202);
 	set(goId0, "Top", 9272);
@@ -2022,11 +2029,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 402045887);
 // Graphical Object:
-	set(goId0, "Right", 15908);
+	set(goId0, "Right", 15872);
 	set(goId0, "Bottom", 8376);
 	set(goId0, "Left", 14164);
 	set(goId0, "Top", 8126);
@@ -2046,11 +2054,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 1065971077);
 // Graphical Object:
-	set(goId0, "Right", 20776);
+	set(goId0, "Right", 20740);
 	set(goId0, "Bottom", 11106);
 	set(goId0, "Left", 14503);
 	set(goId0, "Top", 10856);
@@ -2070,11 +2079,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 1246568557);
 // Graphical Object:
-	set(goId0, "Right", 18464);
+	set(goId0, "Right", 18428);
 	set(goId0, "Bottom", 11488);
 	set(goId0, "Left", 14469);
 	set(goId0, "Top", 11238);
@@ -2094,11 +2104,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 743266218);
 // Graphical Object:
-	set(goId0, "Right", 16264);
+	set(goId0, "Right", 16228);
 	set(goId0, "Bottom", 10301);
 	set(goId0, "Left", 14520);
 	set(goId0, "Top", 10051);
@@ -2305,11 +2316,12 @@ goId0 = get_new(pageId, "Equation");
 	set(goId0, "FillPattern", -1);
 	set(goId0, "FillColor", 0);
 	set(goId0, "OutlineOnOff", FALSE);
+	set(goId0, "AutoCalculate", TRUE);
 // Base Class Object:
 	set(goId0, "Name", "default");
 	set(goId0, "Uid", 2124433043);
 // Graphical Object:
-	set(goId0, "Right", 19231);
+	set(goId0, "Right", 19195);
 	set(goId0, "Bottom", 7596);
 	set(goId0, "Left", 13270);
 	set(goId0, "Top", 7346);
@@ -2496,8 +2508,8 @@ goId0 = get_new(pageId, "Text");
 ddWinId = get_new(ddsId, "Window");
 	set(ddWinId, "Object", ddoId);
 	set(ddWinId, "CurrentPage", 475109618);
-	set(ddWinId, "PageViewRect_475109618", list(-714, 16951, 23036, -1203));
-	set(ddWinId, "Frame", list(100, 85, 1037, 781));
+	set(ddWinId, "PageViewRect_475109618", list(6745, 12301, 22711, 659));
+	set(ddWinId, "Frame", list(100, 85, 1037, 749));
 	set(ddWinId, "ForegroundColor", 0);
 	set(ddWinId, "BackgroundColor", 8);
 	set(ddWinId, "WindowPageOrder", list("page 1"));
