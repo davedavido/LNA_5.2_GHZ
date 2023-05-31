@@ -1,0 +1,5 @@
+<!DOCTYPE DisplayAttributes>
+<Lpp_Differences_List>
+    <LPP visible="0" purpose="drawing" layer="ads_drc_error"/>
+    <LPP visible="0" purpose="drawing" layer="ads_y8"/>
+</Lpp_Differences_List>

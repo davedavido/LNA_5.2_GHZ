@@ -1,11 +1,5 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
-    <Windows>
-        <Schematic x1="308" width="1067" geom="1,0,1,308,20,1067,614,1366,768" cell="LINE_LAYOUT_SPARAMS" lib="BFP840FESD_Test" view="schematic" y1="20" height="614"/>
-        <Schematic x1="-8" width="1366" geom="1,0,3,142,60,1067,604,1366,768" cell="DC_Bias" lib="BFP840FESD_Test" view="schematic" y1="-8" height="745"/>
-        <Schematic x1="-8" width="1366" geom="1,0,3,162,80,1067,604,1366,768" cell="DC_Bias" lib="BFP840FESD_Test" view="schematic" y1="-8" height="745"/>
-        <Schematic x1="-8" width="1366" geom="1,0,3,182,100,1067,604,1366,768" cell="DC_and_SPARAMS BFP840FESD" lib="BFP840FESD_Test" view="schematic" y1="-8" height="745"/>
-        <DDS name="DC_and_SPARAMS BFP840FESD"/>
-    </Windows>
+    <Windows/>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>

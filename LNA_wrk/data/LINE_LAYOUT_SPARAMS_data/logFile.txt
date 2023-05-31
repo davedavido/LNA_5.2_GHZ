@@ -13,8 +13,8 @@ DC DC1[1] <BFP840FESD_Test:LINE_LAYOUT_SPARAMS:schematic>
 .
 .
 
-DC convergence achieved in 153 iterations.
+DC convergence achieved in 211 iterations.
 
 Resource usage:
-  Total stopwatch time     =     6.42 seconds.
+  Total stopwatch time     =     8.10 seconds.
 

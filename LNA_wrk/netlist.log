@@ -1,25 +1,7 @@
-; Top Design: "BFP840FESD_Test:DC_and_SPARAMS BFP840FESD:schematic"
+; Top Design: "BFP840FESD_Test:Layout_final:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="BFP840FESD_Test:DC_and_SPARAMS BFP840FESD:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-; Library Name: BFP840FESD_Test
-; Cell Name: DC_Bias
-; View Name: schematic
-define DC_Bias ( Output  DC_Feed ) 
-;parameters 
-MLIN2:TL2  DC_Feed N__3 Subst="MSub1" W=width_pad_mm mm L=1.3 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
-MLIN2:TL1  Output N__2 Subst="MSub1" W=800 um L=8.4 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
-model MSub1 MSUB H=1.5 mm Er=4.6  Mur=1.0  Cond=5.4e7  Hu=3.9e+34 mil T=0.035 mm TanD=1.000e-3  Rough=0 cm DielectricLossModel=1 FreqForEpsrTanD=1.0e9  LowFreqForTanD=1.0e3  HighFreqForTanD=1.0e12  RoughnessModel=2 
-MLIN2:TL3  N__4 0 Subst="MSub1" W=width_pad_mm mm L=1.3 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
-MGAP:Gap1  N__3 N__4 Subst="MSub1" W=width_pad_mm mm S=0.6 mm 
-
-width_pad_mm=2
-MSTEP:Step1  DC_Feed N__2 Subst="MSub1" W1=width_pad_mm mm W2=0.800 mm 
-
-w50=2.8
-C:C1  DC_Feed 0 C=470 pF 
-end DC_Bias
-
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="BFP840FESD_Test:Layout_final:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: BFP840FESD_Test
 ; Cell Name: bfp840fesd
 ; View Name: schematic
@@ -64,10 +46,18 @@ model m_d5 Diode Is=3.5e-015 Rs=4.7 N=1.02 Cjo=1.2e-014 Vj=0.7 M=0.4999 AllowSca
 model m_bfp840fesd BJT NPN=1 PNP=0 Is=2.009e-016 Bf=946.1 Nf=1 Vaf=300 Ikf=0.1993 Ise=6.26e-015 Ne=2 Br=108 Nr=1 Var=1.288 Ikr=0.0007328 Isc=8.126e-016 Nc=2 Rb=17 Irb=0 Rbm=1 Re=0.05 Rc=4.145 Cje=1.3e-013 Vje=0.6 Mje=0.5 Cjc=1.1e-014 Vjc=0.67 Mjc=0.88 Xcjc=0.4894 Cjs=3e-013 Vjs=0.7 Mjs=0.5 Fc=0.352 Xtf=17.49 Tf=7.494e-013 Vtf=0.5295 Itf=1.025 Ptf=4.667 Tr=1.793e-009 Kf=6.4e-012 Af=1.44 Lateral=0 RbModel=1 Approxqb=1 Tnom=25 Tlev=0 Tlevc=0 Eg=1.11 Xtb=-2.276 Xti=0 
 end bfp840fesd
 
-V_Source:SRC1  N__3 0 Type="V_DC" Vdc=3.0 V SaveCurrent=0 
-bfp840fesd:X1  N__2 N__6 Ve Ve _M=1 
-R:R6  N__10 N__9 R=15 Ohm Temp=16.85 
+
+width_pad_mm=1.8 mm
+MSABND:Bend4  N__77 N__63 Subst="MSub1" W=width Angle=90 M=0.5 
+MTEE_ADS:Tee8  N__33 N__34 N__7 Subst="MSub1" W1=width W2=width W3=width 
+MLIN2:TL34  N__68 N__5 Subst="MSub1" W=width L=2.5 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL38  N__50 N__45 Subst="MSub1" W=0.8 mm L=8.4 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+
+width=2.89 mm
+V_Source:SRC1  DC_Feed 0 Type="V_DC" Vdc=3.0 V SaveCurrent=0 
 aele MuPrime1=mu_prime(S);
+bfp840fesd:X1  N__25 N__24 0 0 _M=1 
+aele Mu1=mu(S);
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 GHz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
@@ -82,46 +72,80 @@ OutputPlan:SP1_Output \
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-R:R5  Ve 0 R=65 Ohm Noise=yes 
-R:R4  N__7 N__0 R=49.3 kOhm Noise=yes 
-R:R1  N__11 N__7 R=133 Ohm Noise=yes 
-aele Mu1=mu(S);
-C:C4  N__8 0 C=1.5 pF 
-C:C3  N__2 N__10 C=220 pF 
-Short:IC  N__7 N__2 Mode=0 SaveCurrent=yes 
-C:C1  0 Ve C=220 pF 
+MTAPER:Taper2  N__6 N__25 Subst="MSub1" W1=width W2=0.45 mm L=1.5 mm 
+R:R1  N__44 N__49 R=133 Ohm 
+R:R4  N__39 N__37 R=49.3 kOhm 
+R:R7  N__41 N__18 R=51 Ohm Temp=16.85 
+MTEE_ADS:Tee9  N__63 N__65 N__59 Subst="MSub1" W1=width W2=width W3=width 
+R:R9  N__56 N__22 R=0.001 Ohm Temp=16.85 
+MLIN2:TL11  N__28 N__46 Subst="MSub1" W=width L=3.9 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL19  N__2 N__15 Subst="MSub1" W=width L=2.6 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL20  N__27 N__77 Subst="MSub1" W=width L=5.2 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MTAPER:Taper3  N__54 N__1 Subst="MSub1" W1=1mm W2=width L=1 mm 
+MTAPER:Taper4  N__4 N__74 Subst="MSub1" W1=width W2=1mm L=1 mm 
+MLIN2:TL4  N__82 N__29 Subst="MSub1" W=width L=1 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL5  N__3 N__75 Subst="MSub1" W=width L=5.2 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL6  N__67 N__10 Subst="MSub1" W=width L=10.4 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MSTEP:Step16  N__22 N__57 Subst="MSub1" W1=width_pad_mm W2=width 
+MTAPER:Taper1  N__29 N__24 Subst="MSub1" W1=width W2=0.45 mm L=1 mm 
+MSTEP:Step15  N__47 N__50 Subst="MSub1" W1=width W2=0.8 mm 
+MLIN2:TL3  N__36 N__51 Subst="MSub1" W=width L=2.5 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MSTEP:Step17  N__65 N__56 Subst="MSub1" W1=width W2=width_pad_mm 
+MLIN2:TL10  N__43 N__42 Subst="MSub1" W=width L=5.2 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL12  N__52 N__53 Subst="MSub1" W=width L=2.5 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL36  N__6 N__19 Subst="MSub1" W=width L=0.92 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MSABND:Bend3  N__19 N__9 Subst="MSub1" W=width Angle=90 M=0.5 
+C:C3  N__17 N__16 C=220 pF 
+C:C2  N__38 N__35 C=220 pF 
 
-Cemit=22 pF
-Port:Term1  N__15 0 Num=1 Z=50 Ohm Noise=yes 
-Port:Term2  N__9 0 Num=2 Z=50 Ohm Noise=yes 
+length_pad_mm=1.3 mm
+MSTEP:Step1  N__33 N__45 Subst="MSub1" W1=width_pad_mm mm W2=0.8 mm 
+
+lambda_20=1 mm
+MSTEP:Step6  N__39 N__5 Subst="MSub1" W1=width_pad_mm W2=width 
+
+l_180=15.536700 mm
+
+l_90=7.768350 mm
+MSTEP:Step4  N__35 N__3 Subst="MSub1" W1=width_pad_mm W2=width 
 
 Options:Options1 Temp=16.85 Tnom=25 TopologyCheck=yes ForceS_Params=yes GiveAllWarnings=yes  \
 MaxWarnings=10 ForceM_Params=yes InitialGuessAnnotation=0 TopologyCheckMessages=no doDeltaAC=no  \
 ReduceSPortRatio=0.5 WarnSOA=yes MaxWarnSOA=5 Census=no MinNodalR=1e-2 Ohm  \
 LargeCapThreshold=1e-3 F EnableAssertChecks=no EnableSpareRemoval=yes 
 
-DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
-OutputPlan="DC1_Output" 
-
-OutputPlan:DC1_Output \
-      Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
-
-Short:IB1  N__0 N__6 Mode=0 SaveCurrent=yes 
-C:C2  N__15 N__0 C=220 pF 
-L:L2  N__15 N__8 L=2.7 nH Noise=yes  
-DC_Bias:X3  N__11 N__3 
+C:C1  N__34 0 C=470 pF 
+model MSub1 MSUB H=1.5 mm Er=4.6 Mur=1 Cond=5.4e7 Hu=3.9e+34 mil T=18.0 um TanD=0.001 Rough=0 um DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MTEE_ADS:Tee6  N__20 N__28 N__2 Subst="MSub1" W1=width W2=width W3=width 
+MTEE_ADS:Tee7  N__43 N__53 N__51 Subst="MSub1" W1=width W2=width W3=width 
+R:R10  N__64 0 R=1000000000 Ohm Temp=16.85 
+R:R15  N__78 0 R=1000000000 Ohm Temp=16.85 
+MLIN2:TL37  N__9 N__46 Subst="MSub1" W=width L=3.4 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MLIN2:TL35  N__7 DC_Feed Subst="MSub1" W=width L=15.54 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MSTEP:Step14  N__16 N__27 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step13  N__17 N__15 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step10  N__41 N__52 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step9  N__18 N__20 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step8  N__44 N__42 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step7  N__49 N__47 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step5  N__37 N__36 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step3  N__38 N__10 Subst="MSub1" W1=width_pad_mm W2=width 
+Port:Term1  Input 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  Output 0 Num=2 Z=50 Ohm Noise=yes 
+MSTEP:Step19  N__59 N__64 Subst="MSub1" W1=width W2=width_pad_mm 
+MSTEP:Step27  N__58 N__78 Subst="MSub1" W1=width W2=width_pad_mm 
+MTEE_ADS:Tee12  N__73 N__67 N__66 Subst="MSub1" W1=width W2=width W3=width 
+MSTEP:Step31  N__71 N__69 Subst="MSub1" W1=width W2=width_pad_mm 
+R:R16  N__76 0 R=1000000000 Ohm Temp=16.85 
+R:R17  N__60 0 R=1000000000 Ohm Temp=16.85 
+R:R18  N__69 N__72 R=0.001 Ohm Temp=16.85 
+MSTEP:Step28  N__72 N__73 Subst="MSub1" W1=width_pad_mm W2=width 
+MSTEP:Step29  N__66 N__76 Subst="MSub1" W1=width W2=width_pad_mm 
+MSTEP:Step30  N__70 N__60 Subst="MSub1" W1=width W2=width_pad_mm 
+MLIN2:TL44  N__74 Output Subst="MSub1" W=1mm L=16.3 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MLIN2:TL45  Input N__54 Subst="MSub1" W=1mm L=16.3 mm Wall1=2.5e+25 meter Wall2=2.5e+25 meter Mod=1 
+MTEE_ADS:Tee11  N__57 N__4 N__58 Subst="MSub1" W1=width W2=width W3=width 
+MTEE_ADS:Tee13  N__1 N__71 N__70 Subst="MSub1" W1=width W2=width W3=width 
+MTEE_ADS:Tee2  N__75 N__82 N__68 Subst="MSub1" W1=width W2=width W3=width 
+MCROS:Cros1  N__21 N__83 N__23 N__14 Subst="MSub1" W1=width W2=width W3=width W4=width 
+MRSTUB:Stub2  N__14 Subst="MSub1" Wi=width L=11.83 mm Angle=60 

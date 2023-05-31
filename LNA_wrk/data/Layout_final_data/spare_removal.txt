@@ -1,0 +1,14 @@
+(nil
+    spare_node_list(4)
+       (
+            "N__14"
+            "N__21"
+            "N__23"
+            "N__83"
+        )
+    spare_inst_list(2)
+       (
+            "Cros1"
+            "Stub2"
+        )
+)
